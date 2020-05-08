@@ -13,7 +13,16 @@
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 %>
 
+<% running = room_is_running(room.bbb_id) %>
+
 <tr class="room-block" data-path="<%= update_settings_path(room) %>" data-room-settings=<%= room.room_settings %> data-room-access-code="<%= room.access_code %>">
+  <td class="text-left w-0 pr-4">
+    <% if running %>
+      <i class="fas fa-circle rounded-circle text-primary pulse" title="<%= t("administrator.rooms.table.running") %>"></i>
+    <% else %>
+      <small><i class="far fa-circle rounded-circle text-muted" title="<%= t("administrator.rooms.table.not_running") %>"></i></small>
+    <% end %>
+  </td>
   <td>
     <div id="room-title" class="form-inline edit_hover_class">
       <% if room.id == room.owner.room_id %>
@@ -24,9 +33,10 @@
       </span>
     </div>
     <div class="small text-muted">
-      <% running = room_is_running(room.bbb_id) %>
       <% if running %>
          <%= t("administrator.rooms.table.started", session: friendly_time(room.last_session)) %>
+         &middot;
+         <%= t("administrator.rooms.table.participants") %>: <%= @participants_count[room.bbb_id].presence %>
       <% elsif room.last_session.present? %>
         <%= t("administrator.rooms.table.ended", session: friendly_time(room.last_session)) %>
       <% else %>
@@ -40,17 +50,7 @@
   <td class="text-left">
     <%= room.uid %>
   </td>
-  <td class="text-center">
-    <%= @participants_count[room.bbb_id].presence || "-" %>
-  </td>
-  <td class="text-left">
-    <% if running %>
-      <%= t("administrator.rooms.table.running") %>
-    <% else %>
-      <%= t("administrator.rooms.table.not_running") %>
-    <% end %>
-  </td>
-  <td class="text-center">
+  <td class="text-right w-0>
     <div class="item-action dropdown">
       <a href="javascript:void(0)" data-toggle="dropdown" class="icon">
         <i class="fas fa-ellipsis-v px-4"></i>
