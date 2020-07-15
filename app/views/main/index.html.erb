@@ -15,17 +15,25 @@
 
 <div class="background">
   <div class="container pt-9 pb-8">
-    <div class="row">
-      <div class="col-md-12 col-sm-12 text-center">
-        <h1 id="main-text" class="display-4 mb-4"> <%= t("landing.welcome").html_safe %></h1>
-        <p class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about", href: link_to(t("greenlight"), "https://bigbluebutton.org/2018/07/09/greenlight-2-0/", target: "_blank", rel: "noopener")).html_safe %></p>
-        <%= link_to "https://youtu.be/Hso8yLzkqj8", target: "_blank" do %>
-          <h4><%= t("landing.video") %> <i class="far fa-play-circle ml-1"></i></h4>
-        <% end %>
-      </div>
-
+    <div class="text-center" style="max-width: 950px; margin: 0 auto">
+      <h1>
+        Willkommen auf dem Konferenz-Server der <a href="https://www.dospartei.de/" target="_blank">DOS-Partei</a>!
+      </h1>
+      <br />
+      <p class="lead">Hier könnt Ihr kostenlos Konferenzräume für eure politischen oder auch nicht politischen, privaten Online-Treffen erstellen.</p>
+      <p class="lead">Um einen Konferenzraum zu erstellen, müsst Ihr euch zuerst kurz registrieren. Eingeladene Teilnehmer können anschließend über einen Link auch ganz ohne Anmeldung der Konferenz beitreten.</p>
+      <p class="lead">
+        Ihr müsst keine Apps herunterladen.<br />
+        Sowohl für Moderatoren als auch Teilnehmer funktioniert diese Seite komplett im Browser eures Computers, Laptops, Tablets oder Mobiltelefons.<br />
+        Die Teilnahme kann wahlweise mit Kamera und/oder Mikrofon oder auch per Telefon erfolgen.
+      </p>
+      <p class="lead">
+        Bitte achtet auf höfliche Umgangsformen in den Konferenzräumen.<br />
+        Auch die <a href="https://www.dospartei.de/axiome/" target="_blank">Axiome der DOS-Partei</a> sollten respektiert werden.<br />
+        Bei eingehenden Beschwerden oder Missbrauch behalten wir uns vor, von unserem Hausrecht Gebrauch zu machen.
+      </p>
+      <p class="lead">Die Nutzung ist wie oben angegeben kostenlos – wir freuen uns aber auch über einen kleinen Kostenbeitrag in Form einer <a href="https://www.dospartei.de/mach-mit/spende/" target="_blank">Spende</a>.</p>
+      <p class="lead">Oder möchtet Ihr bei DOS mitmachen? Weitere Informationen gibt es <a href="https://www.dospartei.de/mach-mit/mitglied-werden/" target="_blank">hier</a>.</p>
     </div>
   </div>
 </div>
-
-<%= render "main/components/features" %>
