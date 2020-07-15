@@ -44,15 +44,16 @@
 @import "main";
 @import "rooms";
 @import "sessions";
-@import "utilities/fonts";
 @import "users";
 
 * {
   outline: none !important;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+
 html, body {
-  font-family: "Source Sans Pro" !important;
+  font-family: "Asap" !important;
   position: relative;
   width: 100%;
   height: 100%;
